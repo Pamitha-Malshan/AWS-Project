@@ -8,11 +8,13 @@ const {
 } = require("@aws-sdk/client-s3");
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 
-// In Lambda, omit static keys and let the SDK use the function's execution role.
-// Locally (no execution role available), fall back to the keys in .env.
+// In Lambda, omit static keys and let the SDK use the function's execution role
+// (Lambda injects its own temporary AWS_ACCESS_KEY_ID/SECRET/SESSION_TOKEN, which
+// the default credential chain handles correctly — relaying only two of the three
+// breaks temporary credentials). Locally, fall back to the keys in .env.
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
-  ...(process.env.AWS_ACCESS_KEY_ID && {
+  ...(!process.env.AWS_LAMBDA_FUNCTION_NAME && {
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
