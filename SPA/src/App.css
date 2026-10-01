@@ -1,0 +1,285 @@
+/* ── Layout ── */
+.app {
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: system-ui, sans-serif;
+}
+
+.app-header {
+  background: #1e40af;
+  color: #fff;
+  padding: 20px 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.header-sub {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.app-main {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  margin-bottom: 20px;
+}
+
+/* ── Toast ── */
+.toast {
+  background: #16a34a;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ── Form ── */
+.product-form {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.product-form h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-grid input {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-grid input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+}
+
+.form-grid input:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.form-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── Buttons ── */
+.btn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn:hover { opacity: 0.88; }
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary  { background: #2563eb; color: #fff; }
+.btn-secondary { background: #e2e8f0; color: #334155; }
+.btn-edit     { background: #f59e0b; color: #fff; padding: 6px 14px; font-size: 13px; }
+.btn-delete   { background: #ef4444; color: #fff; padding: 6px 14px; font-size: 13px; }
+
+/* ── Table section ── */
+.table-section h2 {
+  font-size: 16px;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+.product-table th {
+  background: #1e40af;
+  color: #fff;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.product-table tr:last-child td {
+  border-bottom: none;
+}
+
+.product-table tr:hover td {
+  background: #f8fafc;
+}
+
+.code-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── States ── */
+.loading       { color: #64748b; font-size: 14px; }
+.fetch-error   { color: #dc2626; font-size: 14px; }
+.empty-message { color: #94a3b8; font-size: 14px; text-align: center; padding: 40px; }
+
+/* ── Section divider ── */
+.section-divider {
+  border: none;
+  border-top: 2px dashed #e2e8f0;
+  margin: 40px 0;
+}
+
+/* ── Document section ── */
+.doc-section h2 {
+  font-size: 16px;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.drop-zone {
+  border: 2px dashed #93c5fd;
+  border-radius: 12px;
+  background: #eff6ff;
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.drop-zone:hover,
+.drop-zone--active {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.drop-zone-icon { font-size: 36px; }
+
+.drop-zone-text {
+  margin: 8px 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.drop-zone-hint {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+.doc-table th {
+  background: #0f766e;
+  color: #fff;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.doc-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.doc-table tr:last-child td { border-bottom: none; }
+.doc-table tr:hover td { background: #f0fdfa; }
+
+.doc-name {
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.btn-download { background: #0d9488; color: #fff; padding: 6px 14px; font-size: 13px; }
+
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .app-header { flex-direction: column; gap: 4px; }
+}
